@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "prog0_testing",
+      "setup": "",
+      "run": "bash runTests.sh",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+~ ffff ffff ffff ffff ffff ffff ffff ffff  = 0000 0000 0000 0000 0000 0000 0000 0000
+
+~ 2222 2222 2222 2222 2222 2222 2222 2222  = dddd dddd dddd dddd dddd dddd dddd dddd
+
+ffff ffff ffff ffff ffff ffff ffff ffff  << 16 = ffff ffff ffff ffff ffff ffff ffff 0000
+
+ffff ffff ffff ffff ffff ffff ffff ffff  << 65 = ffff ffff ffff fffe 0000 0000 0000 0000
+
+00ff ffff ffff ffff ffff ffff ffff ffff  >> 16 = 0000 00ff ffff ffff ffff ffff ffff ffff
+
+ffff ffff ffff ffff ffff ffff ffff ffff  >> 16 = ffff ffff ffff ffff ffff ffff ffff ffff
+
+00ff ffff ffff ffff ffff ffff ffff ffff  >> 80 = 0000 0000 0000 0000 0000 00ff ffff ffff
+
+ffff ffff ffff ffff ffff ffff ffff ffff  >> 80 = ffff ffff ffff ffff ffff ffff ffff ffff
+
+ffff ffff ffff ffff ffff ffff ffff ffff  &
+0000 ffff 0000 ffff 0000 ffff 0000 ffff  =
+0000 ffff 0000 ffff 0000 ffff 0000 ffff
+
+ffff 0000 ffff 0000 ffff 0000 ffff 0000  |
+0000 ffff 0000 ffff 0000 ffff 0000 ffff  =
+ffff ffff ffff ffff ffff ffff ffff ffff
+
+ffff ffff ffff 0000 0000 ffff ffff ffff  ^
+0000 0000 0000 ffff 0000 ffff ffff ffff  =
+ffff ffff ffff ffff 0000 0000 0000 0000
+
+ffff ffff ffff 0000 0000 ffff ffff ffff  +
+0000 0000 0000 ffff 0000 ffff ffff ffff  =
+ffff ffff ffff ffff 0001 ffff ffff fffe
+
+7fff ffff ffff 0000 0000 ffff ffff ffff  +
+7f00 0000 0000 ffff 0000 ffff ffff ffff  =
+feff ffff ffff ffff 0001 ffff ffff fffe  - Overflow
+
+8fff ffff ffff 0000 0000 ffff ffff ffff  +
+8f00 0000 0000 ffff 0000 ffff ffff ffff  =
+1eff ffff ffff ffff 0001 ffff ffff fffe  - Overflow
+
+Invalid input: 'ffff111122223333444455556666777g'
+Usage:
+        ./prog0 op [k] number1 [number2]
+                op: operation from {not, sl, sr, and, or, xor, add}
+                k: shift positions for operations 'sl' and 'sr'
+                number1: operand in hex for unary operations 'not', 'sl', 'sr'
+                or first operand in hex for binary operations 'and', 'or', 'xor', 'add'
+                number2: second operand in hex for binary operations
+Invalid operation: 'sub'
+Usage:
+        ./prog0 op [k] number1 [number2]
+                op: operation from {not, sl, sr, and, or, xor, add}
+                k: shift positions for operations 'sl' and 'sr'
+                number1: operand in hex for unary operations 'not', 'sl', 'sr'
+                or first operand in hex for binary operations 'and', 'or', 'xor', 'add'
+                number2: second operand in hex for binary operations
+Too many or too few arguments
+Usage:
+        ./prog0 op [k] number1 [number2]
+                op: operation from {not, sl, sr, and, or, xor, add}
+                k: shift positions for operations 'sl' and 'sr'
+                number1: operand in hex for unary operations 'not', 'sl', 'sr'
+                or first operand in hex for binary operations 'and', 'or', 'xor', 'add'
+                number2: second operand in hex for binary operations
